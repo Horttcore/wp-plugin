@@ -17,18 +17,13 @@ class PluginFactory
 
     /**
      * Create and return an instance of the plugin.
-     * This always returns a shared instance.
      *
      * @since 1.0.0
      * @return Plugin Plugin instance.
      */
     public static function create()
     {
-        static $plugin = null;
-        if ( null === $plugin ) {
-            $plugin = new Plugin();
-        }
-        return $plugin;
+        return new Plugin();
 	}
 	
 

@@ -2,7 +2,6 @@
     "name": "horttcore/wp-plugin",
     "description": "A WordPress plugin helper",
     "license": "MIT",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "Ralf Hortt",
