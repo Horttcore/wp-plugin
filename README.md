@@ -7,6 +7,23 @@
 * Boot the plugin
 
 ## Example
+
+### Building a service
+```php
+<?php
+use Horttcore/Plugin/Interfaces/ServiceInterface;
+
+class Service implements ServiceInterface
+{
+    function register(){
+        add_action('wp_body_open', function(){
+            echo 'Hello World';
+        });
+    }
+}
+```
+
+### Attaching a service
 ```php
 <?php
 PluginFactory::create()
@@ -16,6 +33,10 @@ PluginFactory::create()
 ```
 
 ## Changelog
+
+### v2.0.0
+
+* Changed: Service MUST implement the interface `ServiceInterface`
 
 ### v1.0.1
 

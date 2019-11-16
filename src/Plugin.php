@@ -93,10 +93,15 @@ class Plugin
         $services = $this->getServices();
         array_walk($services, function ($service) {
 
-            if ( !class_exists( $service ) || !method_exists( $service, 'register' ) )
-                return;
+            if ( !class_exists( $service ) ) ) {
+                throw new Exception('Service is missing');
+            }
+            
+            if ( !is_subclass_of($service, 'ServiceInterface') ) {
+                throw new Exception('Service does not implement ServiceInterface');
+            }
 
-                (new $service)->register();
+            (new $service)->register();
         });
     }
 
