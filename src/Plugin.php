@@ -1,8 +1,6 @@
 <?php
 namespace RalfHortt\Plugin;
 
-use const Exception;
-
 /**
  * Class Plugin.
  *
@@ -81,10 +79,10 @@ class Plugin
         $services = $this->getServices();
         array_walk($services, function ($service) {
             if (!class_exists($service['class']) || !method_exists($service['class'], 'register')) {
-                throw new Exception('Service is not registerable');
+                throw new \Exception(sprintf('Service %s is not registerable', $service['class']));
             }
 
-            (new $service['class'])->register(...$service['args']);
+            (new $service['class'](...$service['args']))->register();
         });
     }
 }
