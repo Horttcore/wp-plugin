@@ -14,6 +14,8 @@
 
 ```php
 <?php
+use RalfHortt\Plugin\PluginFactory;
+
 PluginFactory::create()
     ->addService(Service::class) // Simple service
     ->addService(anotherService::class, 'Foo', ['bar']) // Service that passes args to his register method
