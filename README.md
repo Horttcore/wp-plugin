@@ -8,21 +8,42 @@
 
 ## Installation
 
-`$ composer require ralfhortt/wp-plugin`
+`composer require ralfhortt/wp-plugin`
+
+## Usage
+
+- Create a service class with a `register` method
+- Add a service to the plugin factory
 
 ## Example
+
+### Simple
+```php
+<?php
+use RalfHortt\Plugin\PluginFactory;
+
+PluginFactory::create()
+    ->addService(Service::class)
+    ->boot();
+```
+
+### Advanced
 
 ```php
 <?php
 use RalfHortt\Plugin\PluginFactory;
 
 PluginFactory::create()
-    ->addService(Service::class) // Simple service
-    ->addService(anotherService::class, 'Foo', ['bar']) // Service that passes args to his register method
+    ->addService(anotherService::class, 'Foo', ['bar'])
     ->boot();
 ```
 
+
 ## Changelog
+
+### v2.0.1
+
+- Fix: Pass args to __construct instead of register method
 
 ### v2.0.0
 
