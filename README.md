@@ -41,20 +41,20 @@ PluginFactory::create()
 
 ## Changelog
 
-### v2.0.1
+### v2.0.1 - 2020-01-09
 
 - Fix: Pass args to __construct instead of register method
 
-### v2.0.0
+### v2.0.0 - 2019-12-09
 
 - Add: Pass arguments to service register function
 - Change: Namespace changed to RalfHortt\Plugin
 - Change: Move translation to its own service
 
-### v1.0.1
+### v1.0.1 - 2019-01-16
 
 - Changed: `PluginFactory` returns a new `Plugin` object instead of a shared instance
 
-### v1.0.0
+### v1.0.0 - 2019-01-15
 
 - Initial release
