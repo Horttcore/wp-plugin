@@ -38,8 +38,23 @@ PluginFactory::create()
     ->boot();
 ```
 
+### Hook
+
+```php
+<?php
+use RalfHortt\Plugin\PluginFactory;
+
+PluginFactory::create()
+    ->addServiceHook('wp_head', anotherService::class)
+    ->boot();
+```
+
 
 ## Changelog
+
+### v2.1.0 - 2022-05-30
+
+- Added `addServiceHook` method to define the at which WordPress Hook a service is registered
 
 ### v2.0.1 - 2020-01-09
 
